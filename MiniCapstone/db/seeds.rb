@@ -4,7 +4,7 @@
 # Examples:
 #
 100.times do |product1|
-  product1 = Product.new(name: Faker::Commerce.product_name, image: Faker::Placeholdit.image, description: Faker::Lorem.sentence, price: Faker::Commerce.price.to_i)
+  product1 = Product.new(name: Faker::Commerce.product_name, image: Faker::Placeholdit.image, description: Faker::Lorem.paragraph, price: Faker::Commerce.price.to_i)
   product1.save
 end
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
