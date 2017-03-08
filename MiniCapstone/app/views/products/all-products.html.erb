@@ -4,9 +4,9 @@
 <% @products.each do |product|%>
   <p>---------------------------------------------------------------------------------------------------------------------------------------------------</p>
   <img src="<%= product.image %>" alt="<%= product.image %>">
-  <h4>Name:</h4><p> <%= product.name %></p>
-  <h4>Description:</h4><p> <%= product.description %></p>
-  <h4>Price:</h4><p> $<%= product.price %>.99</p>
+  <h5>Name:</h5><p> <%= product.name %></p>
+  <h5>Description:</h5><p> <%= product.description %></p>
+  <h5>Price:</h5><p> $<%= product.price %>.99</p> <!-- .99 hardcode appended for aesthetic reasons -->
 <% end %>
 
 <!-- Right align the attributes -->
