@@ -3,8 +3,14 @@ class ProductsController < ApplicationController
     render 'welcome.html.erb'
   end
 
-  def all_products
+  def index
     @products = Product.all
-    render 'all-products.html.erb'
+    render 'index.html.erb'
+  end
+
+  def show
+    product_id = params[:id]
+    @product = Product.find_by(id: params[:id])
+    render 'show.html.erb'
   end
 end
