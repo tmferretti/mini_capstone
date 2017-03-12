@@ -1,0 +1,25 @@
+<p> i will show an form in the future </p>
+
+<%= form_tag "/recipes", method: :post do%>
+  <div>
+  <label name="form_title">Title</label>
+    <input type="text" name="form_title">
+  </div>
+  <div>
+  <label name="form_chef">Chef</label>
+    <input type="text" name="form_chef">
+  </div>
+  <div>
+  <label name="form_ingredients">Ingredients</label>
+    <input type="text" name="form_ingredients">
+  </div>
+  <div>
+  <label name="form_directions">Directions</label>
+    <input type="text" name="form_directions">
+  </div>
+  <div>
+  <label name="form_prep_time">Prep Time</label>
+    <input type="text" name="form_prep_time">
+  </div>
+  <input type="submit" value="Submit">
+<% end %>
