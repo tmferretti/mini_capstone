@@ -1,0 +1,23 @@
+<%= form_tag "/products/#{@product.id}", method: :patch do%>
+
+  <div>
+  <label name="form_name">Name</label>
+    <input type="text" name="form_name" value="<%= @product.name %>">
+  </div>
+  <div>
+  <label name="form_price">Price</label>
+    <input type="text" name="form_price" value="<%= @product.price %>">
+  </div>
+  <label name="form_description">Description</label>
+    <input type="text" name="form_description" value="<%= @product.description %>">
+  </div>
+  <div>
+  <label name="form_image">Image</label>
+    <input type="text" name="form_image" value="<%= @product.image %>">
+  </div>
+  <button class="btn btn-default" type="submit">Submit</button>
+
+<% end %>
+
+
+<%= button_to "Delete", {:controller => :products, :action => 'destroy', :id => @product.id }, :method => :delete %>

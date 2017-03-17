@@ -1,11 +1,11 @@
-<h1>Products List</h1>
 
-<br>
 <% @products.each do |product|%>
-  <p>---------------------------------------------------------------------------------------------------------------------------------------------------</p>
-  <h5>Name:</h5><p> <a href= "/products/<%= product.id %>"><%= product.name %></a></p>
-  <h5>Description:</h5><p> <%= product.description %></p>
-  <h5>Price:</h5><p> $<%= product.price %>.99</p> <!-- .99 hardcode appended for reasons -->
+  <div class="col-md-6">
+    <div class="well">
+      <h5>Name:</h5><p> <a href= "/products/<%= product.id %>"><%= product.name %></a></p>
+      <h5>Description:</h5><p> <%= product.description %></p>
+      <h5>Price:</h5><p> $<%= product.price %></p> 
+    </div>
+  </div>
 <% end %>
 
-<!-- Right align the attributes -->
