@@ -1,10 +1,11 @@
 
 <% @products.each do |product|%>
-  <div class="col-md-6">
+  <div class="col-md-4">
     <div class="well">
+      <img src="<%= product.images.first.url %>" alt="<%= product.images.first.url %>">
       <h5>Name:</h5><p> <a href= "/products/<%= product.id %>"><%= product.name %></a></p>
       <h5>Description:</h5><p> <%= product.description %></p>
-      <h5>Price:</h5><p> $<%= product.price %></p> 
+      <h5>Price:</h5><p> $<%= product.price %></p>
     </div>
   </div>
 <% end %>

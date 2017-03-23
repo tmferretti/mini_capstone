@@ -1,10 +1,26 @@
 <div class="well">  
-  <img src="<%= @product.image %>" alt="<%= @product.image %>">
   <h4><%= @sale_message %></h4>
+  <% @product.images.each do |image| %>
+  	<img src="<%= image.url %>" alt="<%= image.url %>">
+  <% end %>
+
   <h5>Name:</h5><p> <%= @product.name %></p>
+  <h5>Supplier:</h5><p> <%= @product.supplier.name %></p>
   <h5>Description:</h5><p> <%= @product.description %></p>
   <h5>Price:</h5><p> $<%= @product.price %></p>
   <h5>Tax:</h5><p> $<%= @product.tax %></p>
   <h5>Total Price:</h5><p> $<%= @product.total_price %></p>
+  
   <h6><a href= "/products/<%= @product.id %>/edit/">Edit this entry</a></h6>
+  <h6><a href= "/products/<%= @product.id %>/images/new/">Add an Image</a></h6>
+
+  <%= form_tag "/orders", method: :post do %>
+    <label name="quantity">Qty.</label>
+      <input type="text" name="quantity">
+    <input type="hidden" name="product_id" value="<%= @product.id %>">
+    <input type="hidden" name="subtotal" value="<%= @product.price %>">
+    <input type="hidden" name="tax" value="<%= @product.tax %>">
+    <input type="hidden" name="total" value="<%= @product.total_price %>">
+    <input type="submit" name="Purchase">
+  <% end %>
 </div>

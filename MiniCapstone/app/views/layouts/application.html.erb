@@ -29,9 +29,9 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sort By <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="/products?sort_by=price_high">Price Highest</a></li>
-            <li><a href="/products?sort_by=price_low">Price lowest</a></li>
-            <li><a href="/products?sort_by=name">Title</a></li>
+            <li><a href="/products?order=price_high">Price Highest</a></li>
+            <li><a href="/products?order=price_low">Price lowest</a></li>
+            <li><a href="/products?order=name">Title</a></li>
             
           </ul>
         </li>
@@ -44,6 +44,12 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/products?discount=true">Discount Items</a></li>
+        <% if session[:user_id] %>
+          <li><a href="/logout">Logout</a></li>
+        <% else %>  
+          <li><a href="/login">Login</a></li>
+          <li><a href="/signup">Sign Up</a></li>
+        <% end %>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
